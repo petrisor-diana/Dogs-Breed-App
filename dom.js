@@ -1,35 +1,33 @@
 
-var myDogBtn = document.getElementById('giveGog');
-var myDog = document.getElementById('dogBreed');
-var myPicture = document.getElementById('dogImage');
-
-myDogBtn.addEventListener('click', generateNew)
-
-function generateNew() {
-    var myRequestDog = new XMLHttpRequest();
-    myRequest.open("GET", "https://dog.ceo/api/breeds/list");
-    myRequest.send();
-    myRequest.addEventListener("load", function onLoad(e) {
-        var myResponseAsText = e.target.response;
-        var myResponseAsAJSONBreed = JSON.parse(myResponseAsText);
-        console.log(myResponseAsAJSONBreed)
-    });
-
- 
-    var myRequestPicture = new XMLHttpRequest();
-    myRequest.open("GET", "https://dog.ceo/api/breed/"+ x + "/images");
-    myRequest.send();
-    myRequest.addEventListener("load", function onLoad(e) {
-        var myResponseAsText = e.target.response;
-        var myResponseAsAJSONPicture = JSON.parse(myResponseAsText);
-    });
-
-    addContent();
-}
+var myDogPic = document.getElementsByClassName('myDog');
+var myDog = document.getElementById('displayCatalog');
 
 
-function addContent() {
-    for (var i=0; i< myResponseAsAJSONBreed.message.length; i++)
-      myDog.innerHTML = myResponseAsAJSONBreed.message[i];
-      myDog.innerHTML = myResponseAsAJSONPicture.message[0];
-}
+
+
+var myRequestDog = new XMLHttpRequest();
+myRequestDog.open("GET", "https://dog.ceo/api/breeds/list");
+myRequestDog.send();
+myRequestDog.addEventListener("load", function onLoad(e) {
+    var myResponseAsText = e.target.response;
+    var myResponseAsAJSONBreed = JSON.parse(myResponseAsText);
+
+    for (let i = 0; i < myResponseAsAJSONBreed.message.length; i++) {
+        
+        var myRequestPicture = new XMLHttpRequest();
+        myRequestPicture.open("GET", "https://dog.ceo/api/breed/" + myResponseAsAJSONBreed.message[i] + "/images");
+        myRequestPicture.send();
+        myRequestPicture.addEventListener("load", function onLoad(e) {
+            var myResponseAsText = e.target.response;
+            var myResponseAsAJSONPicture = JSON.parse(myResponseAsText);
+  
+            myDog.innerHTML += "<img src=" + myResponseAsAJSONPicture.message[0] + ">";
+            myDog.innerHTML += "<p class='myDog'>" + myResponseAsAJSONBreed.message[i] + "</p>"
+
+        });
+    }
+});
+
+
+
+
