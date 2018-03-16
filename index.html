@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,40 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <img src="https://cdn0.iconfinder.com/data/icons/veterinary-line-1/48/26-256.png"/>
-        <p> Take a friend home  </p>
+        <img src="https://cdn0.iconfinder.com/data/icons/veterinary-line-1/48/26-256.png" />
+        <p> Take a friend home </p>
     </header>
-    <div>
-        <!-- <aside> 
-            <div id="menu">
-                <p> Companion dogs</p>
-                <p> Guard dogs </p>
-                <p> Hunting dogs </p>
-                <p> Working dogs</p>                
+    <div class="container">
+        <div id="menu">
+            
+            <p id="companionDogs" onclick="getCompanionDogs()"> Companion dogs</p>
+            <p id="guardDogs" onclick="getGuardDogs()"> Guard dogs</p>
+            <p id="huntingDogs" onclick="getHuntingDogs()"> Hunting dogs</p>
+            <p id="workingDogs" onclick="getWorkingDogs()"> Working dogs</p>
+            <p id="firstPage" onclick="showFirstPage()">Go back to First page</p>
+            <input type="text" id="myInput" onkeyup="searchDog()" placeholder="Search for a dog...">
+        </div>
+
+        <div class="secondContainer">
+
+            <div class="" id="welcomePage">    
+                <p> Hi there, dog lover! <br> You must be excited to pick a pet, so welcome on our page ! <br> For more information on any breed,<br> please contact us.</p> 
             </div>
-        </aside> -->
-            <div id="displayCatalog">
-                <p id="dogBreed"></p>
-                <img id="dogImage"/>
-                <!-- <button id="giveGog">Your Friend</button> -->
+
+            <div class='hidden' id="displayCatalog">
             </div>
-            <p></p>
+
+            <!-- <button id="giveGog">Your Friend</button> -->
+        </div>
     </div>
+
     <footer>
-      
+        <p>Join us on: </p>
     </footer>
     <script type="text/javascript" src="dom.js"></script>
 </body>
+
 </html>
