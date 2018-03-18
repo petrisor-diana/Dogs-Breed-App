@@ -16,46 +16,46 @@ myRequestDog.addEventListener("load", function onLoad(e) {
 });
 
 
-function getCompanionDogs() {
-    debugger
+console.log(allDogsBreeds)
+
+document.getElementById('companionDogs').onclick = function getCompanionDogs() {
+
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
     for (let i = 0; i < allDogsBreeds.length / 4; i++) {
         getPictures(i);
+
     }
 }
-console.log(getCompanionDogs)
 
-function getGuardDogs() {
-    debugger
+
+document.getElementById('guardDogs').onclick = function getGuardDogs() {
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
-    for (let i = allDogsBreeds.length / 4; i < allDogsBreeds.length / 2; i++)
+    for (let i = allDogsBreeds.length / 4; i < allDogsBreeds.length / 2; i++) {
         getPictures(i);
+    }
 }
-console.log(getGuardDogs)
 
-function getHuntingDogs() {
-    debugger
+document.getElementById('huntingDogs').onclick = function getHuntingDogs() {
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
     for (let i = allDogsBreeds.length / 2; i < allDogsBreeds.length - allDogsBreeds.length / 4; i++)
         getPictures(i);
 }
 
-console.log(getHuntingDogs)
 
-function getWorkingDogs() {
-    debugger
+
+document.getElementById('workingDogs').onclick = function getWorkingDogs() {
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
     for (let i = allDogsBreeds.length - allDogsBreeds.length / 4; i < allDogsBreeds.length; i++)
         getPictures(i);
 }
 
-console.log(getWorkingDogs)
 
-function showFirstPage() {
+
+document.getElementById('firstPage').onclick = function showFirstPage() {
     myDog.classList.add('hidden');
     myFirstPage.classList.remove('hidden');
 }
