@@ -29,7 +29,6 @@ header img {
 .hidden {
     display: none;
 }
-
 #menu {
     position: absolute;
     margin-top: 10px;
@@ -38,7 +37,7 @@ header img {
     background: white;
     min-height: 500px;
     width: 20%;
-    z-index: 2;
+    z-index: 1;
 }
 #menu p{
     padding: 20px;
@@ -53,7 +52,7 @@ header img {
     margin-left: 5%;
     min-height: 500px; 
     width: 70%;
-    z-index: 1;
+    z-index: 2;
 }
 .secondContainer #welcomePage {
     background-image: url("http://worldartsme.com/images/cat-paw-print-clipart-1.jpg");
@@ -61,6 +60,7 @@ header img {
     min-height: 500px; 
     padding: 20px;
     position: relative;
+    z-index: 3;
 }
 .secondContainer #welcomePage p{
     background: white;
@@ -74,18 +74,18 @@ header img {
     min-height: 500px; 
     padding: 20px;
     position: relative;
-    transform: translate(-15%);
+    z-index: 4;
+    display: block;
+    margin-left: 5%;
 }
-
 .dogImage{
     width: 400px;
     height: 400px;
 }
 footer {
     border-top: 1px solid black;
-    /* position: relative; */
+    position: relative; 
 }
-
 #myInput{
     height: 30px;
     background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/14173-200.png') no-repeat;
