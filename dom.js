@@ -46,6 +46,7 @@ document.getElementById('huntingDogs').addEventListener('click',function getHunt
 
 
 document.getElementById('workingDogs').addEventListener('click', function getWorkingDogs() {
+    debugger
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
     for (let i = allDogsBreeds.length - allDogsBreeds.length / 4; i < allDogsBreeds.length; i++)
@@ -55,6 +56,8 @@ document.getElementById('workingDogs').addEventListener('click', function getWor
 
 
 document.getElementById('firstPage').addEventListener('click', function showFirstPage() {
+    debugger
+    myDog.innerHTML="";
     myDog.classList.add('hidden');
     myFirstPage.classList.remove('hidden');
 });
