@@ -2,6 +2,7 @@ var myDog = document.getElementById('displayCatalog');
 var myFirstPage = document.getElementById('welcomePage');
 var allDogsBreeds = [];
 var myGogInput = document.getElementById('myInput');
+var myPagination = document.getElementById('pagination');
 
 var myRequestDog = new XMLHttpRequest();
 myRequestDog.open("GET", "https://dog.ceo/api/breeds/list");
@@ -19,51 +20,53 @@ myRequestDog.addEventListener("load", function onLoad(e) {
 console.log(allDogsBreeds)
 
 document.getElementById('companionDogs').addEventListener('click', function getCompanionDogs() {
+    myDog.innerHTML="";
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
     for (let i = 0; i < allDogsBreeds.length / 4; i++) {
-        getPictures(i);
+        getDogPictures(i);
     }
 });
 
 
 document.getElementById('guardDogs').addEventListener('click', function getGuardDogs() {
-    debugger
+    myDog.innerHTML="";
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
     for (let i = allDogsBreeds.length / 4; i < allDogsBreeds.length / 2; i++) {
-        getPictures(i);
+        getDogPictures(i);
     }
 });
 
 document.getElementById('huntingDogs').addEventListener('click',function getHuntingDogs() {
+    myDog.innerHTML="";
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
     for (let i = allDogsBreeds.length / 2; i < allDogsBreeds.length - allDogsBreeds.length / 4; i++)
-        getPictures(i);
+        getDogPictures(i);
 });
 
 
 
 document.getElementById('workingDogs').addEventListener('click', function getWorkingDogs() {
-    debugger
+    myDog.innerHTML="";
     myFirstPage.classList.add('hidden');
     myDog.classList.remove('hidden');
     for (let i = allDogsBreeds.length - allDogsBreeds.length / 4; i < allDogsBreeds.length; i++)
-        getPictures(i);
+        getDogPictures(i);
 });
 
 
 
 document.getElementById('firstPage').addEventListener('click', function showFirstPage() {
-    debugger
+   
     myDog.innerHTML="";
     myDog.classList.add('hidden');
     myFirstPage.classList.remove('hidden');
 });
 
 
-function getPictures(i) {
+function getDogPictures(i){
     var myRequestPicture = new XMLHttpRequest();
     myRequestPicture.open("GET", "https://dog.ceo/api/breed/" + allDogsBreeds[i] + "/images");
     myRequestPicture.send();
@@ -77,20 +80,28 @@ function getPictures(i) {
     });
 }
 
+
+// myGogInput.addEventListener("input",searchDog);
+
 // function searchDog() {
 
+  
+
 //     var yourDog = search(myGogInput.value, allDogsBreeds);
-//     getPictures(yourDog);
+//     getDogPictures(yourDog);
 
 // }
 
-// function search('affenpinscher', allDogsBreeds) {
-//     for (var i = 0; i < allDogsBreeds.length; i++)
-//         if (list[i].startsWith('affenpinscher')) {
-//             console.log(allDogsBreeds[i]);
+// function search( a, list) {
+//     debugger
+//     var rez=[];
+//     for (var i = 0; i < list.length; i++)
+//         if (list[i].startsWith('a')) {
+//             rez.push(list[i]);
 //         }
-//         else
-//             return null;
-
+//             return rez;
 // }
 
+// var x= search('african', allDogsBreeds);
+
+// console.log(x[0]);
